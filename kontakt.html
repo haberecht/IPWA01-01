@@ -1,61 +1,103 @@
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles.css">
-        <title>CO₂-Footprint</title>
-    </head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+
+    <title>CO₂-Footprint</title>
+</head>
+
 <body>
-    <header>
-        <h1 class="page-title"><img src="logo.png" alt="CO₂-Footprint Logo" width="100" height="75"></h1>
-        <nav class="local-menu">
-          <ul>
-              <li><a href="index.html">Startseite</a></li>
-              <li><a href="ueberUns.html">Über uns</a></li>
-              <li><a href="kontakt.html">Kontakt</a></li>
-          </ul>
-      </nav>
-      </header>
+    <div class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="logo.png" alt="EcoEmission"></a>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="index.html">Startseite</a></li>
+                    <li><a href="ueberUns.html">Über Uns</a></li>
+                    <li><a aria-current href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="container-contact">
+            <div class="left-column-contact">
+                <div class="left-section-contact">
+                    <div class="textblock">
+                        <h2 class="textblock-title">Kundenservice</h2>
+                        <div class="field">
+                            <p>
+                                Sie haben Fragen zu unseren Aufgaben oder Projekten?
+                                <br>Gerne sind wir telefonisch für Sie da:
+                            </p>
+                            <p>DE: <a href="tel:+491231231230">+49 123 123 123 0</a></p>
+                            <p>AT: <a href="tel:+432342342340">+43 234 234 234 0</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="left-section-contact">
+                    <div class="textblock">
+                        <h2 class="textblock-title">Weitere Fragen</h2>
+                        <div class="field">
+                            <p>
+                                Für grundsätzliche Hinweise nutzen Sie
+                                <br>gerne das Kontaktformular auf der rechten Seite.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-column-contact">
+                <form method="post">
+                    <div class="contact">
+                        <div class="contact-header">
+                            <h2 class="contact-title">Kontaktformular</h2>
+                            <em class="contact-required-hint">* Pflichtfelder</em>
+                        </div>
+                        <div class="contact-information">
+                            <section class="contact">
+                                <label for="first_name">Vorname:</label>
+                                <input type="text" id="first_name" name="first_name" size="10" maxlength="255"
+                                    placeholder="Vorname *" required>
 
-    <main>
-        <script src="script.js"></script>
-        <section>
-            <h2>Kontaktformular</h2>
-            <form method="post" >
-                <label for="name">Ihr Name:</label>
-                <input type="text" id="name" name="name" required>
-        
-                <label for="email">Ihre E-Mail-Adresse:</label>
-                <input type="email" id="email" name="email" required>
-        
-                <label for="message">Ihre Nachricht:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-        
-                <button type="submit">Absenden</button>
-            </form>
-        </section>
-        
-        <section class="confirmation" style="display: none;">
-            <p>Ihre Anfrage wurde versendet. Wir werden Ihre Anfrage bearbeiten und melden uns dann bei Ihnen!</p>
-        </section>
+                                <label for="last_name">Nachname:</label>
+                                <input type="text" id="last_name" name="last_name" size="10" maxlength="255"
+                                    placeholder="Nachname *" required>
+
+                                <label for="mail">Ihre E-Mail Adresse:</label>
+                                <input type="email" id="mail" name="mail" size="60" maxlength="255"
+                                    placeholder="Ihre E-Mail-Adresse *" required>
+
+                                <label for="message">Ihre Nachricht:</label>
+                                <textarea id="message" name="message" rows="4" placeholder="Nachricht *"
+                                    required></textarea>
+
+                                <button type="submit">Absenden</button>
+                                <section class="confirmation" style="display: none;">
+                                    <p>Ihre Anfrage wurde versendet. Wir werden Ihre Anfrage bearbeiten und melden uns
+                                        dann bei Ihnen!</p>
+                                </section>
+                            </section>
+                        </div>
+                    </div>
+                    <script src="script.js"></script>
+                </form>
+            </div>
+        </div>
+    </div>
     </main>
-
-    <footer class="footer">
-        <p>&copy; 2023 CO₂-Footprint Non-Profit Organisation. Alle Rechte vorbehalten.</p>
-        
-        <p><a href="impressum.html">Impressum</a> | <a href="datenschutz.html">Datenschutz</a> | <a href="nutzungsbedingungen.html">Nutzungsbedingungen</a>
-      </footer>
-
-      <script>
-        const form = document.querySelector('form');
-        const confirmationSection = document.querySelector('.confirmation');
-
-        form.addEventListener('submit', function (event) {
-            event.preventDefault();
-            confirmationSection.style.display = 'block';
-            form.style.display = 'none'; // Formular ausblenden
-        });
-    </script>
+    <div class="footer">
+        <div class="container">
+            <p>&copy; 2023 EcoEmission Insights Non-Profit Organisation. Alle Rechte vorbehalten.</p>
+            <p><a href="impressum.html">Impressum</a> | <a href="datenschutz.html">Datenschutz</a> | <a
+                    href="nutzungsbedingungen.html">Nutzungsbedingungen</a></p>
+        </div>
+    </div>
 </body>
+
 </html>

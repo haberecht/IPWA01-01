@@ -43,3 +43,33 @@ headers.forEach((header, index) => {
     });
     header.appendChild(input);
 });
+
+ // Funktion, um die Erfolgsmeldung anzuzeigen und Formularfelder zu leeren
+ function showMessageAndClearForm() {
+    var successMessage = document.createElement("p");
+    successMessage.textContent = "Nachricht erfolgreich abgeschickt!";
+    successMessage.classList.add("success-message");
+
+    var rightColumn = document.querySelector(".right-column-contact");
+    rightColumn.appendChild(successMessage);
+
+    // Formularfelder leeren
+    var form = document.querySelector("form");
+    form.reset();
+
+    // Formular ausblenden
+    form.style.display = "none";
+
+    // Nachricht und Formularfelder nach 3 Sekunden ausblenden
+    setTimeout(function () {
+      rightColumn.removeChild(successMessage);
+      form.style.display = "block"; // Formular wieder anzeigen
+    }, 3000); // Nachricht und Formularfelder werden nach 3 Sekunden ausgeblendet und angezeigt
+  }
+
+  // Event-Handler für das Formular
+  var form = document.querySelector("form");
+  form.addEventListener("submit", function (event) {
+    event.preventDefault(); // Das Formular nicht tatsächlich senden
+    showMessageAndClearForm(); // Erfolgsmeldung anzeigen und Formularfelder leeren
+  });

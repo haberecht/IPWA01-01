@@ -1,83 +1,181 @@
-/* Allgemeine Styles */
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    /* Fügt das Hintergrundbild hier ein */
-    background-image: url('grass_background.jpeg');
-    /* Stellt sicher, dass das Bild den gesamten Bildschirm abdeckt und sich automatisch anpasst. */
-    background-size: cover;
-    /* Zentriert das Bild. */
-    background-position: center;
-     /* Wiederhole das Bild nicht. */
-    background-repeat: no-repeat;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    justify-content: space-between; /* Platzieren Sie den Header oben und den Footer unten */
+    justify-content: space-between;
 }
 
-/* Main */
-main {
-    flex-grow: 1;
-    background-color: rgb(255, 255, 255, 0.7);
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-/* Footer */
-.footer {
-    padding: 40px; /* Footer-Abstand zum Inhalt */
-    text-align: center;
-    background-color: rgb(255, 255, 255, 0.7);
+.header {
+    background: #304D5D;
+    max-width: 100%;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
 }
 
-.local-menu {
+.logo img {
+    max-width: 45%;
+    height: auto;
+    margin-right: auto;
+}
+
+.nav {
+    font-size: large;
+    background-color: #304D5D;
+    color: #fff;
+    top: 0px;
     display: flex;
     justify-content: flex-end;
-    /* Rechtsbündige Ausrichtung des Menüs */
-    background-color: #1dc411;
-    color: #fff;
-    padding: 10px;
-}
-
-.local-menu ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-}
-
-.local-menu li {
-    margin-right: 20px;
-}
-
-.local-menu a {
-    text-decoration: none;
-    color: #fff;
-}
-
-/* Navigation */
-.nav {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
+    align-items: center;
 }
 
 .nav ul {
-    list-style: none;
+    list-style-type: none;
     padding: 0;
+    display: flex;
 }
 
 .nav li {
-    display: inline;
-    margin-right: 20px;
+    margin: 0;
+    white-space: nowrap;
 }
 
-/* Container */
-.container {
+.nav a {
+    text-decoration: none;
+    color: white;
+    padding: 0px 30px;
+    position: relative;
+}
+
+.nav a:after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 2px;
+    width: 0;
+    height: 4px;
+    background-color: orange;
+    transition: width 350ms;
+
+}
+
+.nav a:hover:after {
+    width: 95%;
+}
+
+/* Footer-Stile */
+.footer {
+    background-color: #304D5D;
+    color: #fff;
+    padding: 1px 0;
+    text-align: center;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+
+.flex {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    background-size: auto;
+}
+
+/* Container Kontaktformular */
+.container-contact {
     background-color: #fff;
     max-width: 960px;
     margin: 0 auto;
     padding: 20px;
+    display: flex;
+}
+
+.right-column-contact {
+    border: 0;
+}
+
+.left-column-contact {
+    flex-direction: column;
+    display: flex;
+}
+
+.left-section-contact {
+    border: 0;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.left-section-contact table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.left-section-contact th,
+.left-section-contact td {
+    border: 0;
+    padding: 10px;
+    text-align: left;
+}
+
+.left-section-contact th {
+    background-color: #f2f2f2;
+}
+
+.left-section-contact td {
+    font-size: 16px;
+    color: black;
+}
+
+.contact label,
+.contact legend {
+    display: none;
+}
+
+h2 {
+    display: block;
+    font-size: 1.5em;
+    color: #304D5D;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.textblock-title {
+    color: #304D5D;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 30px;
+    margin: 0 0 18px 0;
+}
+
+.textblock {
+    margin: 0 0 54px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-title {
+    color: #304D5D;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 30px;
+    margin: 0 0 18px 0;
 }
 
 /* Tabelle */
@@ -87,33 +185,42 @@ main {
     background-color: #fff;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
     margin-bottom: 20px;
+    /* Stil für die Tabelle mit Größe, Schatten und Abstand */
 }
 
-.table th, .table td {
+.table th,
+.table td {
     padding: 15px;
     text-align: center;
+    /* Legt den Zellabstand und die Zentrierung der Zellen fest */
 }
 
 .table th {
-    background-color: #1dc411;
+    background-color: #304D5D;
     color: #fff;
+    /* Stil für Tabellenüberschriften */
 }
 
 .table tr:nth-child(even) {
     background-color: #f2f2f2;
+    /* Legt die Hintergrundfarbe für gerade Zeilen fest */
 }
 
 .table tr:hover {
-    background-color: #5bee6c;
+    background-color: orange;
+    /* Hervorhebungsfarbe bei Zeilenhover */
 }
 
 /* Kontaktformular-Styling */
 section form {
     max-width: 400px;
     margin: 0 auto;
+    padding: 200px;
 }
 
-section label, section input, section textarea {
+section label,
+section input,
+section textarea {
     display: block;
     width: 100%;
     margin-bottom: 10px;
@@ -122,7 +229,7 @@ section label, section input, section textarea {
 section button {
     display: block;
     width: 100%;
-    background-color: #4CAF50;
+    background-color: #304D5D;
     color: white;
     border: none;
     padding: 10px;
@@ -131,27 +238,56 @@ section button {
 }
 
 section button:hover {
-    background-color: #45a049;
+    background-color: orange;
 }
-
 
 /* Anpassungen für Tablets */
 @media (max-width: 768px) {
-    .header h1 {
-        font-size: 30px;
+    .header {
+        padding: 15px;
+        font-size: 24px;
     }
-    .nav li {
-        display: block;
-        margin: 10px 0;
+
+    .nav a {
+        padding: 0px 15px;
+    }
+
+    .table {
+        width: 80%;
+    }
+
+    .table th,
+    .table td {
+        padding: 8px;
+    }
+    
+    .container-contact {
+        flex-direction: column; /* Abschnitte stehen untereinander */
     }
 }
 
+
 /* Anpassungen für Smartphones */
-@media (max-width: 768px) {
-    .table {
-        font-size: 14px;
-    }
-    .table th, .table td {
+@media (max-width: 480px) {
+    .header {
         padding: 10px;
+        font-size: 18px;
+    }
+
+    .nav a {
+        padding: 0px 10px;
+    }
+
+    .table {
+        width: 100%; /* Volle Breite auf Smartphones */
+    }
+
+    .table th,
+    .table td {
+        padding: 6px;
+    }
+
+    .container-contact {
+        flex-direction: column; /* Abschnitte stehen untereinander */
     }
 }
