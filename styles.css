@@ -43,13 +43,13 @@ body {
     list-style-type: none;
     padding: 0;
     display: flex;
-    flex-direction: row; 
+    flex-direction: row;
 }
 
 .nav li {
     margin: 0;
     white-space: nowrap;
-    margin-right: 20px; 
+    margin-right: 20px;
 }
 
 .nav a {
@@ -206,7 +206,6 @@ h2 {
 
 .table tr:hover {
     background-color: orange;
-    /* Hervorhebungsfarbe bei Zeilenhover */
 }
 
 /* Kontaktformular-Styling */
@@ -258,9 +257,9 @@ section button:hover {
     .table td {
         padding: 8px;
     }
-    
+
     .container-contact {
-        flex-direction: column; /* Abschnitte stehen untereinander */
+        flex-direction: column;
     }
 }
 
@@ -277,7 +276,7 @@ section button:hover {
     }
 
     .table {
-        width: 100%; /* Volle Breite auf Smartphones */
+        width: 100%;
     }
 
     .table th,
@@ -286,6 +285,6 @@ section button:hover {
     }
 
     .container-contact {
-        flex-direction: column; /* Abschnitte stehen untereinander */
+        flex-direction: column;
     }
 }
